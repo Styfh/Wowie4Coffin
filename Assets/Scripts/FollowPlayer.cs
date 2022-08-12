@@ -6,16 +6,26 @@ public class FollowPlayer : MonoBehaviour
 {
 
     [SerializeField] private float speed;
+    [SerializeField] private float stopDistance;
     
     private Transform target;
 
-    void Start()
+    private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void Update()
+    private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(Vector2.Distance(target.position, transform.position) > stopDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
+
+    public float getStopDistance()
+    {
+        return stopDistance;
+    }
+
 }
