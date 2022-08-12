@@ -10,12 +10,12 @@ public class FlipSprite : MonoBehaviour
     private Vector2 posPrevFrame;
     private Vector2 posCurrentFrame;
 
-    void Start()
+    private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
         posCurrentFrame = transform.position;
 
