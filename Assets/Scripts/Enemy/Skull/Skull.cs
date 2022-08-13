@@ -41,7 +41,7 @@ public class Skull : MonoBehaviour
 
     private IEnumerator Dash()
     {
-        Debug.Log("Dashing");
+        // Debug.Log("Dashing");
 
         canDash = false;
         isDashing = true;
@@ -57,7 +57,7 @@ public class Skull : MonoBehaviour
 
         yield return new WaitForSeconds(dashTime);
         
-        Debug.Log("Dash Time End");
+        // Debug.Log("Dash Time End");
 
         rb.velocity = Vector2.zero;
 
@@ -66,7 +66,7 @@ public class Skull : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         
-        Debug.Log("Dash Cooldown End");
+        // Debug.Log("Dash Cooldown End");
 
         canDash = true;
     }
