@@ -32,19 +32,17 @@ public class Skull : MonoBehaviour
     void Update()
     {
 
-        if(canDash)
+        if(canDash && !isDashing)
         {
             StartCoroutine(Dash());
-        }
-        else
-        {
-            fp.MoveTowardsTarget();
         }
 
     }
 
     private IEnumerator Dash()
     {
+        Debug.Log("Dashing");
+
         canDash = false;
         isDashing = true;
         dirX = target.position.x - transform.position.x;
@@ -59,11 +57,17 @@ public class Skull : MonoBehaviour
 
         yield return new WaitForSeconds(dashTime);
         
+        Debug.Log("Dash Time End");
+
+        rb.velocity = Vector2.zero;
+
         tr.emitting = false;
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         
+        Debug.Log("Dash Cooldown End");
+
         canDash = true;
     }
 }
