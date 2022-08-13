@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8172982790968848650}
+  - component: {fileID: 3048142730424777744}
   - component: {fileID: 8172982790968848651}
   - component: {fileID: 8172982790968848648}
   - component: {fileID: 8172982790968848653}
   - component: {fileID: 8172982790968848652}
   - component: {fileID: 8172982790968848654}
+  - component: {fileID: 1810133361901501028}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -36,6 +38,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &3048142730424777744
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172982790968848649}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!212 &8172982790968848651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -147,7 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db57c21aaa01154eba5f2e2d86c2af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.5
+  stopDistance: 0
 --- !u!114 &8172982790968848654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +184,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da1d107d616d6d4ea1e9e26cf8cbd21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1810133361901501028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172982790968848649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49541349b3f4e441b419c7563f12600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBetweenDashes: 1
+  dashPower: 2
