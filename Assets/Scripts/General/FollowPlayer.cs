@@ -22,10 +22,16 @@ public class FollowPlayer : MonoBehaviour
 
     public void MoveTowardsTarget()
     {
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
+
+    public bool CheckAtDistance()
+    {
         if(Vector2.Distance(target.position, transform.position) > stopDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            return false;
         }
+        return true;
     }
 
 }
