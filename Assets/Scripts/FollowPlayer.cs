@@ -15,17 +15,17 @@ public class FollowPlayer : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    private void Update()
+    public float getStopDistance()
+    {
+        return stopDistance;
+    }
+
+    public void MoveTowardsTarget()
     {
         if(Vector2.Distance(target.position, transform.position) > stopDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-    }
-
-    public float getStopDistance()
-    {
-        return stopDistance;
     }
 
 }

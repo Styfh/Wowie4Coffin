@@ -25,7 +25,10 @@ public class Golem : MonoBehaviour
         if(Vector2.Distance(target.position, transform.position) <= stopDistance)
         {
             anim.SetInteger("state", (int) State.attacking);
-        } else{
+        } 
+        else
+        {
+            fp.MoveTowardsTarget();
             anim.SetInteger("state", (int) State.moving);
         }
     }
