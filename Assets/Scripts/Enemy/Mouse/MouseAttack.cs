@@ -12,7 +12,7 @@ public class MouseAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Instantiating cheese");
+        //Debug.Log("Instantiating cheese");
         Instantiate(cheese, transform.position, Quaternion.identity);
     }
 

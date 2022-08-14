@@ -12,4 +12,5 @@ public class GolemSelfDestruct : MonoBehaviour
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
 }

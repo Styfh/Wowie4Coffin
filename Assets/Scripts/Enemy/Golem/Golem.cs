@@ -32,5 +32,10 @@ public class Golem : MonoBehaviour
             anim.SetInteger("state", (int) State.moving);
         }
     }
- 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Golem hit!");
+    }
+
 }
