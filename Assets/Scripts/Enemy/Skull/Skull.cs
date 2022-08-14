@@ -15,8 +15,6 @@ public class Skull : MonoBehaviour
     private Rigidbody2D rb;
 
     private float timeBetweenDash;
-    private float dirX;
-    private float dirY;
     private bool canDash = true;
     private bool isDashing;
 
@@ -45,14 +43,10 @@ public class Skull : MonoBehaviour
 
         canDash = false;
         isDashing = true;
-        dirX = target.position.x - transform.position.x;
-        dirY = target.position.y - transform.position.y;
 
-        float hyp = (float) System.Math.Sqrt(dirX * dirX + dirY * dirY);
-        dirX /= hyp;
-        dirY /= hyp;
+        Vector2 direction = (target.position - transform.position).normalized * dashPower;
 
-        rb.velocity = new Vector2(dirX * dashPower, dirY * dashPower);
+        rb.velocity = new Vector2(direction.x, direction.y);
         tr.emitting = true;
 
         yield return new WaitForSeconds(dashTime);
