@@ -45,10 +45,10 @@ public class Crab : MonoBehaviour
     
     private IEnumerator Attack()
     {
-        Debug.Log("Attacking");
+        // Debug.Log("Attacking");
         isAttacking = true;
         yield return new WaitForSeconds(1);
-        Debug.Log("Cooling down");
+        // Debug.Log("Cooling down");
         isAttacking = false;
         attackOnCooldown = true;
         yield return new WaitForSeconds(attackCooldown);

@@ -20,18 +20,28 @@ public class FollowPlayer : MonoBehaviour
         return stopDistance;
     }
 
+    public bool CheckAtDistance()
+    {
+        if(getDistanceToTarget() <= stopDistance)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void MoveTowardsTarget()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
-    public bool CheckAtDistance()
+    public void MoveAwayFromTarget()
     {
-        if(Vector2.Distance(target.position, transform.position) > stopDistance)
-        {
-            return false;
-        }
-        return true;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, - speed * Time.deltaTime);
+    }
+
+    public float getDistanceToTarget()
+    {
+        return Vector2.Distance(target.position, transform.position);
     }
 
 }
