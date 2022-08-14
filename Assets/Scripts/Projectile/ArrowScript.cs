@@ -16,14 +16,16 @@ public class ArrowScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-         DamageScript enemy = hitInfo.GetComponent<DamageScript>();
-         if (enemy != null)
-         {
-             enemy.TakeDamage(damage);
-         }
-         if (enemy.health <= 0)
-         {
+        if (hitInfo.CompareTag("Player"))
+        {
+            return;
+        }
+        DamageScript enemy = hitInfo.GetComponent<DamageScript>();
+        if (enemy != null){
+            enemy.TakeDamage(damage);
+        }
+        if (enemy.health <= 0){
             Destroy(gameObject);
-         }
+        }
     }
 }
