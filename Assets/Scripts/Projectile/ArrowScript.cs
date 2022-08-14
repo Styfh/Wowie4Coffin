@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour
 {
     //public GameObject hitEffect;
-    public int damage = 40;
+    public int damage;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,10 +16,14 @@ public class ArrowScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        // EnemiScript enemy = hitInfo.GetComponent<EnemiScript>();
-        // if (enemy != null)
-        // {
-        //     enemy.TakeDamage(damage);
-        // }
+         DamageScript enemy = hitInfo.GetComponent<DamageScript>();
+         if (enemy != null)
+         {
+             enemy.TakeDamage(damage);
+         }
+         if (enemy.health <= 0)
+         {
+            Destroy(gameObject);
+         }
     }
 }

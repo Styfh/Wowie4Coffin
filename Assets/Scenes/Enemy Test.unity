@@ -405,6 +405,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3861b49452ce0364885563da899261a7, type: 3}
+--- !u!1 &1240405502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5265962013112427633, guid: d1b14909dd6fdb64f83c93909f679497,
+    type: 3}
+  m_PrefabInstance: {fileID: 1115846496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1363421788
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +457,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.2829015, y: 1}
+    m_SensorSize: {x: 2.5111113, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -482,6 +488,45 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1115846496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1513714649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240405502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+--- !u!61 &1513714650
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240405502}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.045592666, y: -0.1937691}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2705162, y: 1.6124618}
+  m_EdgeRadius: 0
 --- !u!1 &1779405213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2896349726131548607, guid: ac49419a76803ab4781f141456366a36,

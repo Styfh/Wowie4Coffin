@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8373854939990132453}
   - component: {fileID: 7080978151311367573}
   - component: {fileID: 2006254695670507486}
+  - component: {fileID: 3959042763751554241}
   m_Layer: 0
   m_Name: Golem-Explosion
   m_TagString: Untagged
@@ -181,3 +182,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfa1aedd7b97944a8b278a31566f4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3959042763751554241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450553578743598304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62c66e570834614ba9280bf50bfc9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3

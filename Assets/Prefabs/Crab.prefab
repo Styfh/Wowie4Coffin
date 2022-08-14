@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5037894237477697067}
   - component: {fileID: 5037894237477697066}
   - component: {fileID: 5037894237477697065}
+  - component: {fileID: -2505636538175573066}
+  - component: {fileID: 7072312327586170638}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -175,3 +177,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68041456, y: 0.4551195}
   m_EdgeRadius: 0
+--- !u!114 &-2505636538175573066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037894237477697057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6
+--- !u!114 &7072312327586170638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037894237477697057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62c66e570834614ba9280bf50bfc9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

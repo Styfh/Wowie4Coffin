@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8652900941239876415}
   - component: {fileID: 8652900941239876413}
   - component: {fileID: 8652900941239876412}
+  - component: {fileID: -3903811987691114393}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cheese: {fileID: 6061373703675705396, guid: 7009bace4e3be7a48bacb07c662a6c7b, type: 3}
   travelTime: 3
+--- !u!114 &-3903811987691114393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652900941239876387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4

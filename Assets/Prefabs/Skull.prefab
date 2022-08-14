@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 8172982790968848654}
   - component: {fileID: 1810133361901501028}
   - component: {fileID: 1234759899711134541}
+  - component: {fileID: -8587605669000971272}
+  - component: {fileID: -3131398528601254925}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -318,3 +320,29 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!114 &-8587605669000971272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172982790968848649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+--- !u!114 &-3131398528601254925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172982790968848649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62c66e570834614ba9280bf50bfc9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
