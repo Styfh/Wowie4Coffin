@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1812948572044228446}
   - component: {fileID: 7289959902819706671}
   - component: {fileID: 1111069169013295429}
-  - component: {fileID: 1111069169013295430}
+  - component: {fileID: -3558123050919015409}
   m_Layer: 0
   m_Name: hero 1
   m_TagString: Player
@@ -190,7 +190,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2705162, y: 1.6124618}
   m_EdgeRadius: 0
---- !u!114 &1111069169013295430
+--- !u!114 &-3558123050919015409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,10 +199,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1111069169219759969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
+  m_Script: {fileID: 11500000, guid: ebcf095d39f51534bbdf9921673531dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  maxHealth: 5
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!1 &4361393671300996390
 GameObject:
   m_ObjectHideFlags: 0
