@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoProjectile : MonoBehaviour
 {
-    
+
     [SerializeField] private float speed;
     [SerializeField] private float travelTime;
 

@@ -5,6 +5,8 @@ using System;
 
 public class Skull : MonoBehaviour
 {
+
+    [SerializeField] private AudioSource sound;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float dashPower;
@@ -22,6 +24,7 @@ public class Skull : MonoBehaviour
 
     void Start()
     {
+        sound.volume = 0.1f;
         fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
         rb = GetComponent<Rigidbody2D>();
@@ -62,6 +65,8 @@ public class Skull : MonoBehaviour
 
         rb.velocity = new Vector2(direction.x, direction.y);
         tr.emitting = true;
+
+        sound.Play();
 
         yield return new WaitForSeconds(dashTime);
         
