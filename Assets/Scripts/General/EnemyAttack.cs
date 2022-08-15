@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour
     public int damage;
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        DamageScript hero = hitInfo.GetComponent<DamageScript>();
+        PlayerGetDamaged hero = hitInfo.GetComponent<PlayerGetDamaged>();
         if (hero != null)
         {
             hero.TakeDamage(damage);
