@@ -8,14 +8,14 @@ public class MouseAttack : MonoBehaviour
     [SerializeField] private GameObject cheese;
     [SerializeField] private float travelTime;
 
-    private Detect detect;
+    private FieldOfVision fov;
 
     private void OnEnable()
     {
-        detect = GetComponent<Detect>();
+        fov = GetComponent<FieldOfVision>();
         GameObject cheeseInstance = Instantiate(cheese, transform.position, Quaternion.identity);
         Cheese cheeseScript = cheeseInstance.GetComponent<Cheese>();
-        cheeseScript.Launch(detect.getAggro());
+        cheeseScript.Launch(fov.getAggro());
 
     }
 

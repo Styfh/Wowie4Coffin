@@ -9,7 +9,7 @@ public class Mouse : MonoBehaviour
 
     private enum State {idling, moving, attacking};
 
-    private Detect detect;
+    private FieldOfVision fov;
     private FollowPlayer fp;
     private Animator anim;
 
@@ -19,7 +19,7 @@ public class Mouse : MonoBehaviour
 
     void Start()
     {
-        detect = GetComponent<Detect>();
+        fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
     }
@@ -27,9 +27,16 @@ public class Mouse : MonoBehaviour
     void Update()
     {
 
-        if (!detect.isAggro())
+        GameObject aggro = fov.getAggro();
+
+        if (aggro == null)
         {
             return;
+        }
+
+        if (!fp.targetIsSet())
+        {
+            fp.setTarget(aggro.transform);
         }
 
         float distanceToRange = fp.getDistanceToTarget() - fp.getStopDistance();

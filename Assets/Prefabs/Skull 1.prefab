@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4224377358462192146}
   - component: {fileID: 7420167842345902617}
   - component: {fileID: 6899045764335960305}
+  - component: {fileID: 2809583012273538473}
   m_Layer: 30
   m_Name: Skull 1
   m_TagString: Untagged
@@ -373,3 +374,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.082345426, y: 0.11332597}
   m_EdgeRadius: 0
+--- !u!114 &2809583012273538473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836574062401765603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5535b2fc7ec4e794086f91cdebf0ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  aggroTag: Player
