@@ -9,9 +9,9 @@ public class Mouse : MonoBehaviour
 
     private enum State {idling, moving, attacking};
 
+    private Detect detect;
     private FollowPlayer fp;
     private Animator anim;
-    private MouseAttack attack;
 
     private State state;
     private bool isAttacking = false;
@@ -19,13 +19,18 @@ public class Mouse : MonoBehaviour
 
     void Start()
     {
+        detect = GetComponent<Detect>();
         fp = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
-        attack = GetComponent<MouseAttack>();
     }
 
     void Update()
     {
+
+        if (!detect.isAggro())
+        {
+            return;
+        }
 
         float distanceToRange = fp.getDistanceToTarget() - fp.getStopDistance();
 

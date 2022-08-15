@@ -11,6 +11,7 @@ public class Skull : MonoBehaviour
     [SerializeField] private float dashTime;
 
     private FollowPlayer fp;
+    private Detect detect;
     private Transform target;
     private Rigidbody2D rb;
 
@@ -21,16 +22,25 @@ public class Skull : MonoBehaviour
 
     void Start()
     {
+        detect = GetComponent<Detect>();
         fp = GetComponent<FollowPlayer>();
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         timeBetweenDash = dashCooldown;
     }
 
     void Update()
     {
 
-        if(canDash && !isDashing)
+        if (!detect.isAggro())
+        {
+            return;
+        }
+        if(target == null)
+        {
+            target = detect.getAggro().transform;
+        }
+
+        if (canDash && !isDashing)
         {
             StartCoroutine(Dash());
         }

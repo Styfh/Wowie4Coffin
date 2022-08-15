@@ -6,15 +6,16 @@ public class Golem : MonoBehaviour
 {
     private enum State {idling, moving, attacking};
 
+    private Detect detect;
     private FollowPlayer fp;
     private Animator anim;
-    private Transform target; 
+
     private float stopDistance;
 
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        detect = GetComponent<Detect>();
         fp = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
         stopDistance = fp.getStopDistance();
@@ -22,7 +23,12 @@ public class Golem : MonoBehaviour
 
     private void Update()
     {
-        if(Vector2.Distance(target.position, transform.position) <= stopDistance)
+        if (!detect.isAggro())
+        {
+            return;
+        }
+
+        if (fp.CheckAtDistance())
         {
             anim.SetInteger("state", (int) State.attacking);
         } 
