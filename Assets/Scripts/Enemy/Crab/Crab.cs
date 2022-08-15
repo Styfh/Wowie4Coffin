@@ -5,6 +5,7 @@ using UnityEngine;
 public class Crab : MonoBehaviour
 {
 
+    [SerializeField] AudioSource audio;
     [SerializeField] float attackCooldown;
 
     private FollowPlayer fp;
@@ -19,6 +20,7 @@ public class Crab : MonoBehaviour
 
     private void Start()
     {
+        audio.volume = 0.1f;
         anim = GetComponent<Animator>();
         fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
@@ -60,6 +62,7 @@ public class Crab : MonoBehaviour
     {
         Debug.Log("Attacking");
         isAttacking = true;
+        audio.Play();
         yield return new WaitForSeconds(1);
         Debug.Log("Cooling down");
         isAttacking = false;

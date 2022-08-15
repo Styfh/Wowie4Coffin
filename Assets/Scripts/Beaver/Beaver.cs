@@ -8,6 +8,7 @@ using UnityEngine;
 public class Beaver : MonoBehaviour
 {
 
+    [SerializeField] private AudioSource sound;
     [SerializeField] private float cooldownDuration;
     [SerializeField] private GameObject projectile;
 
@@ -22,6 +23,7 @@ public class Beaver : MonoBehaviour
 
     void Start()
     {
+        sound.volume = 0.1f;
         player = GameObject.FindGameObjectWithTag("Player");
         fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
@@ -92,6 +94,7 @@ public class Beaver : MonoBehaviour
                 if (!onCooldown)
                 {
                     Debug.Log("Attacking");
+                    sound.Play();
                     GameObject pebble = Instantiate(projectile, transform.position, Quaternion.identity);
                     AutoProjectile pebbleScript = pebble.GetComponent<AutoProjectile>();
                     pebbleScript.Launch(target);
