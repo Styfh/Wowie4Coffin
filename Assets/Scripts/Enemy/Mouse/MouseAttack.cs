@@ -14,7 +14,7 @@ public class MouseAttack : MonoBehaviour
     {
         fov = GetComponent<FieldOfVision>();
         GameObject cheeseInstance = Instantiate(cheese, transform.position, Quaternion.identity);
-        Cheese cheeseScript = cheeseInstance.GetComponent<Cheese>();
+        AutoProjectile cheeseScript = cheeseInstance.GetComponent<AutoProjectile>();
         cheeseScript.Launch(fov.getAggro());
 
     }

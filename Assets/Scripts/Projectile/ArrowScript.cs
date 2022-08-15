@@ -16,7 +16,7 @@ public class ArrowScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.CompareTag("Player"))
+        if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("Companion"))
         {
             return;
         }
