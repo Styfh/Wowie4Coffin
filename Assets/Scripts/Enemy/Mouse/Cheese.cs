@@ -9,15 +9,20 @@ public class Cheese : MonoBehaviour
     [SerializeField] private float travelTime;
 
     private Rigidbody2D rb;
-    private Transform target;
+    public Transform target;
 
-    void Start()
+    public void Launch(GameObject aggroObj)
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        target = aggroObj.transform;
         Vector2 direction = (target.position - transform.position).normalized * speed;
         rb.velocity = new Vector2(direction.x, direction.y);
         Destroy(gameObject, travelTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 
 }
