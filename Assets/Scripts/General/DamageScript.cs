@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    public int health;
 
-    //public int invulnerable;
-    //private int count;
+    [SerializeField] private float invincibilityDuration;
+    private bool canBeDamaged = true;
+    
+    public int health;
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
 
-        if(isDead())
+        if (canBeDamaged)
         {
-            Death();
+            StartCoroutine(IFrames());
+            health -= damage;
+
+            if(isDead())
+            {
+                Death();
+            }
         }
+
     }
 
     void Death()
@@ -32,5 +39,12 @@ public class DamageScript : MonoBehaviour
         }
 
         return false;
+    }
+
+    private IEnumerator IFrames()
+    {
+        canBeDamaged = false;
+        yield return new WaitForSeconds(invincibilityDuration);
+        canBeDamaged = true;
     }
 }

@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibilityDuration: 0
   health: 12
 --- !u!61 &7051879590908763460
 BoxCollider2D:
@@ -216,5 +217,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5535b2fc7ec4e794086f91cdebf0ddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 7
   aggroTag: Player

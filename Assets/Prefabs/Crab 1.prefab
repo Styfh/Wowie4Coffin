@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  stopDistance: 0.5
+  stopDistance: 0.8
 --- !u!114 &2057343896265510594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a86ef9063678f4a9db8f58396354f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibilityDuration: 0
   health: 6
 --- !u!114 &4270243493777178604
 MonoBehaviour:
@@ -243,5 +244,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5535b2fc7ec4e794086f91cdebf0ddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 6
+  range: 7
   aggroTag: Player
