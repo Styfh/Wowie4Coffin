@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,34 +7,34 @@ public class FieldOfVision : MonoBehaviour
 {
 
     [SerializeField] private float range;
-    [SerializeField] private string targetTag;
+    [SerializeField] private string aggroTag;
 
     private Collider2D[] colliderArr;
-    private Detect detect;
-
-    private void Start()
-    {
-        detect = gameObject.GetComponent<Detect>();
-    }
+    
+    private GameObject aggro;
 
     private void Update()
     {
-
-        if(detect.getAggro() != null)
-        {
-            return;
-        }
-
         colliderArr = Physics2D.OverlapCircleAll(transform.position, range);
+    }
 
+    public GameObject getAggro()
+    {
         foreach (Collider2D collider in colliderArr)
         {
-            if(collider.CompareTag(targetTag))
+            //Debug.Log(collider);
+            if (collider.CompareTag(aggroTag))
             {
-                Debug.Log(gameObject.name + " aggroed");
-                detect.setAggro(collider.gameObject);
+                return collider.gameObject;
             }
         }
+
+        return null;
+    }
+
+    public Collider2D[] getDetects()
+    {
+        return colliderArr;
     }
 
 }

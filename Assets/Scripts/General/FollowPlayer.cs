@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,28 +9,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float stopDistance;
     
-    private GameObject target;
-    private DamageScript targetDmg;
-    private Detect detect;
-
-    private void Start()
-    {
-        detect = gameObject.GetComponent<Detect>();
-    }
-
-    private void Update()
-    {
-        if (!detect.isAggro() || target != null)
-        {
-            return;
-        }
- 
-        else
-        {
-            target = detect.getAggro();
-            targetDmg = target.GetComponent<DamageScript>();
-        }
-    }
+    private Transform target;
 
     public float getStopDistance()
     {
@@ -38,7 +18,7 @@ public class FollowPlayer : MonoBehaviour
 
     public bool CheckAtDistance()
     {
-        Debug.Log(getDistanceToTarget());
+        //Debug.Log(getDistanceToTarget());
         if(getDistanceToTarget() <= stopDistance)
         {
             return true;
@@ -48,45 +28,37 @@ public class FollowPlayer : MonoBehaviour
 
     public void MoveTowardsTarget()
     {
-        if(target == null)
+        if(target != null)
         {
-            return;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-
-        if(!detect.isAggro() || targetDmg.isDead())
-        {
-            return;
-        }
-
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     public void MoveAwayFromTarget()
     {
-        if(target == null)
+        if(target != null)
         {
-            return;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, - speed * Time.deltaTime);
         }
-        if(!detect.isAggro() || targetDmg.isDead())
-        {
-            return;
-        }
-
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, - speed * Time.deltaTime);
     }
 
     public float getDistanceToTarget()
     {
-        if(target == null)
+        if(target != null)
         {
-            return float.NegativeInfinity;
+            return Vector2.Distance(target.position, transform.position);
         }
-        if(!detect.isAggro() || targetDmg.isDead() )
-        {
-            return float.PositiveInfinity;
-        }
+        return float.PositiveInfinity;
+    }
 
-        return Vector2.Distance(target.transform.position, transform.position);
+    public void setTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
+    public bool targetIsSet()
+    {
+        return target != null;
     }
 
 }

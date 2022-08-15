@@ -9,8 +9,8 @@ public class Crab : MonoBehaviour
 
     private FollowPlayer fp;
     private Animator anim;
-    //private GameObject target;
-    private Detect detect;
+    private GameObject target;
+    private FieldOfVision fov;
 
     private bool isAttacking = false;
     private bool attackOnCooldown = false;
@@ -20,16 +20,22 @@ public class Crab : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        detect = GetComponent<Detect>();
+        fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
     }
 
     private void Update()
     {
+        GameObject aggro = fov.getAggro();
 
-        if(!detect.isAggro())
+        if(aggro == null)
         {
             return;
+        }
+
+        if(!fp.targetIsSet())
+        {
+            fp.setTarget(aggro.transform);
         }
 
         if(!fp.CheckAtDistance() && !isAttacking)

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1670726219447215112}
   - component: {fileID: -5839564087804947602}
   - component: {fileID: -6282551504828777199}
+  - component: {fileID: 3580563335025231200}
   m_Layer: 31
   m_Name: Cheese
   m_TagString: Untagged
@@ -98,10 +99,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0136715695, y: -0.0052582733}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.21693657, y: 0.15383622}
   m_EdgeRadius: 0
 --- !u!50 &1670726219447215112
 Rigidbody2D:
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   travelTime: 3
+  target: {fileID: 0}
 --- !u!114 &-6282551504828777199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +164,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!61 &3580563335025231200
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061373703675705396}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.013671562, y: -0.006309971}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21273011, y: 0.15593961}
+  m_EdgeRadius: 0
