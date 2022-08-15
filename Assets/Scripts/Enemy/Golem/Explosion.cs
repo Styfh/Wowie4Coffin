@@ -5,9 +5,16 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private AudioSource sound;
+
+    private void Start()
     {
-        Debug.Log("Player hit!");
+        sound.volume = 0.1f;
+    }
+
+    private void OnEnable()
+    {
+        sound.Play();
     }
 
 }

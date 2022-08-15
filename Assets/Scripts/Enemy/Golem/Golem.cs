@@ -6,26 +6,31 @@ public class Golem : MonoBehaviour
 {
     private enum State {idling, moving, attacking};
 
-    private Detect detect;
+    private FieldOfVision fov;
     private FollowPlayer fp;
     private Animator anim;
-
-    private float stopDistance;
 
 
     private void Start()
     {
-        detect = GetComponent<Detect>();
+        fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
-        stopDistance = fp.getStopDistance();
     }
 
     private void Update()
     {
-        if (!detect.isAggro())
+
+        GameObject aggro = fov.getAggro();
+
+        if (aggro == null)
         {
             return;
+        }
+
+        if(!fp.targetIsSet())
+        {
+            fp.setTarget(aggro.transform);
         }
 
         if (fp.CheckAtDistance())
@@ -37,11 +42,6 @@ public class Golem : MonoBehaviour
             fp.MoveTowardsTarget();
             anim.SetInteger("state", (int) State.moving);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Golem hit!");
     }
 
 }

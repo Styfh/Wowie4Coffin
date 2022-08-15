@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Companion
   layers:
   - Default
   - TransparentFX
@@ -33,10 +35,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Friendly Projectile
+  - Enemy Projectile
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -46,4 +48,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 87356597
+    locked: 0
+  - name: Projectile
+    uniqueID: 2542391757
+    locked: 0
+  - name: Enemy
+    uniqueID: 4065451069
     locked: 0

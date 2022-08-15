@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class MouseAttack : MonoBehaviour
 {
-    
+
+    [SerializeField] private AudioSource attackSound;
     [SerializeField] private GameObject cheese;
     [SerializeField] private float travelTime;
 
-    private Detect detect;
+    private FieldOfVision fov;
+
+    private void Start()
+    {
+        attackSound.volume = 0.1f;
+    }
 
     private void OnEnable()
     {
-        detect = GetComponent<Detect>();
+        attackSound.Play();
+        fov = GetComponent<FieldOfVision>();
         GameObject cheeseInstance = Instantiate(cheese, transform.position, Quaternion.identity);
-        Cheese cheeseScript = cheeseInstance.GetComponent<Cheese>();
-        cheeseScript.Launch(detect.getAggro());
+        AutoProjectile cheeseScript = cheeseInstance.GetComponent<AutoProjectile>();
+        cheeseScript.Launch(fov.getAggro());
 
     }
 

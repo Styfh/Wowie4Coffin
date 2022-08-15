@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GameMenu.unity
+    guid: d87051e29376a4f49ba5d0cc061e9ae6
+  - enabled: 1
+    path: Assets/Scenes/Aggro and camera test.unity
+    guid: 0f6f6842320abdd43af2f9993e78bed1
   m_configObjects: {}

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Crab : MonoBehaviour
 {
 
+    [SerializeField] AudioSource audio;
     [SerializeField] float attackCooldown;
 
     private FollowPlayer fp;
     private Animator anim;
-    //private GameObject target;
-    private Detect detect;
+    private GameObject target;
+    private FieldOfVision fov;
 
     private bool isAttacking = false;
     private bool attackOnCooldown = false;
@@ -19,17 +20,24 @@ public class Crab : MonoBehaviour
 
     private void Start()
     {
+        audio.volume = 0.1f;
         anim = GetComponent<Animator>();
-        detect = GetComponent<Detect>();
+        fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
     }
 
     private void Update()
     {
+        GameObject aggro = fov.getAggro();
 
-        if(!detect.isAggro())
+        if(aggro == null)
         {
             return;
+        }
+
+        if(!fp.targetIsSet())
+        {
+            fp.setTarget(aggro.transform);
         }
 
         if(!fp.CheckAtDistance() && !isAttacking)
@@ -54,6 +62,7 @@ public class Crab : MonoBehaviour
     {
         Debug.Log("Attacking");
         isAttacking = true;
+        audio.Play();
         yield return new WaitForSeconds(1);
         Debug.Log("Cooling down");
         isAttacking = false;

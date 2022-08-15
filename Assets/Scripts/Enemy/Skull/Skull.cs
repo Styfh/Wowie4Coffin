@@ -5,13 +5,15 @@ using System;
 
 public class Skull : MonoBehaviour
 {
+
+    [SerializeField] private AudioSource sound;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float dashPower;
     [SerializeField] private float dashTime;
 
     private FollowPlayer fp;
-    private Detect detect;
+    private FieldOfVision fov;
     private Transform target;
     private Rigidbody2D rb;
 
@@ -22,7 +24,8 @@ public class Skull : MonoBehaviour
 
     void Start()
     {
-        detect = GetComponent<Detect>();
+        sound.volume = 0.1f;
+        fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
         rb = GetComponent<Rigidbody2D>();
         timeBetweenDash = dashCooldown;
@@ -31,13 +34,17 @@ public class Skull : MonoBehaviour
     void Update()
     {
 
-        if (!detect.isAggro())
+        GameObject aggro = fov.getAggro();
+
+        if (aggro == null)
         {
             return;
         }
-        if(target == null)
+
+        if (!fp.targetIsSet())
         {
-            target = detect.getAggro().transform;
+            target = aggro.transform;
+            fp.setTarget(aggro.transform);
         }
 
         if (canDash && !isDashing)
@@ -58,6 +65,8 @@ public class Skull : MonoBehaviour
 
         rb.velocity = new Vector2(direction.x, direction.y);
         tr.emitting = true;
+
+        sound.Play();
 
         yield return new WaitForSeconds(dashTime);
         
