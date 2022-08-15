@@ -48,6 +48,11 @@ public class FollowPlayer : MonoBehaviour
 
     public void MoveTowardsTarget()
     {
+        if(target == null)
+        {
+            return;
+        }
+
         if(!detect.isAggro() || targetDmg.isDead())
         {
             return;
@@ -58,6 +63,10 @@ public class FollowPlayer : MonoBehaviour
 
     public void MoveAwayFromTarget()
     {
+        if(target == null)
+        {
+            return;
+        }
         if(!detect.isAggro() || targetDmg.isDead())
         {
             return;

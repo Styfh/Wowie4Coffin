@@ -9,7 +9,7 @@ public class Crab : MonoBehaviour
 
     private FollowPlayer fp;
     private Animator anim;
-    private GameObject target;
+    //private GameObject target;
     private Detect detect;
 
     private bool isAttacking = false;
@@ -30,10 +30,6 @@ public class Crab : MonoBehaviour
         if(!detect.isAggro())
         {
             return;
-        }
-        if(target == null)
-        {
-            target = detect.getAggro();
         }
 
         if(!fp.CheckAtDistance() && !isAttacking)
