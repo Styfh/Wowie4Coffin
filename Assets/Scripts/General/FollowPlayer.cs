@@ -51,6 +51,11 @@ public class FollowPlayer : MonoBehaviour
         return float.PositiveInfinity;
     }
 
+    public Transform GetTarget()
+    {
+        return target;
+    }
+
     public void setTarget(Transform newTarget)
     {
         target = newTarget;

@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8221158093571702145}
   m_Layer: 30
   m_Name: Mouse 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db57c21aaa01154eba5f2e2d86c2af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   stopDistance: 3
 --- !u!114 &5505347944120108923
 MonoBehaviour:
