@@ -9,7 +9,8 @@ public class Crab : MonoBehaviour
 
     private FollowPlayer fp;
     private Animator anim;
-    private Transform target;
+    private GameObject target;
+    private Detect detect;
 
     private bool isAttacking = false;
     private bool attackOnCooldown = false;
@@ -18,13 +19,23 @@ public class Crab : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         anim = GetComponent<Animator>();
+        detect = GetComponent<Detect>();
         fp = GetComponent<FollowPlayer>();
     }
 
     private void Update()
     {
+
+        if(!detect.isAggro())
+        {
+            return;
+        }
+        if(target == null)
+        {
+            target = detect.getAggro();
+        }
+
         if(!fp.CheckAtDistance() && !isAttacking)
         {
             fp.MoveTowardsTarget();
@@ -45,10 +56,10 @@ public class Crab : MonoBehaviour
     
     private IEnumerator Attack()
     {
-        // Debug.Log("Attacking");
+        Debug.Log("Attacking");
         isAttacking = true;
         yield return new WaitForSeconds(1);
-        // Debug.Log("Cooling down");
+        Debug.Log("Cooling down");
         isAttacking = false;
         attackOnCooldown = true;
         yield return new WaitForSeconds(attackCooldown);
