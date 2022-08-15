@@ -33455,7 +33455,14 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -5, y: 7}
+        - {x: -4, y: -10}
+        - {x: -4, y: -16}
+        - {x: 3, y: -16}
+        - {x: 4, y: 7}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 7d20c3f7a97a7704f9a70ea1832366b1
@@ -44067,11 +44074,11 @@ TextureImporter:
       MainLev2.0_1100: 21302200
       MainLev2.0_461: 21300922
       MainLev2.0_132: 21300264
+      MainLev2.0_91: 21300182
       MainLev2.0_1182: 21302364
       MainLev2.0_460: 21300920
       MainLev2.0_734: 21301468
       MainLev2.0_1605: 21303210
-      MainLev2.0_91: 21300182
       MainLev2.0_615: 21301230
       MainLev2.0_1800: 21303600
       MainLev2.0_115: 21300230
@@ -44248,10 +44255,10 @@ TextureImporter:
       MainLev2.0_1477: 21302954
       MainLev2.0_972: 21301944
       MainLev2.0_1814: 21303628
-      MainLev2.0_1202: 21302404
-      MainLev2.0_1159: 21302318
-      MainLev2.0_985: 21301970
       MainLev2.0_216: 21300432
+      MainLev2.0_985: 21301970
+      MainLev2.0_1159: 21302318
+      MainLev2.0_1202: 21302404
       MainLev2.0_207: 21300414
       MainLev2.0_1673: 21303346
       MainLev2.0_1093: 21302186
@@ -44470,12 +44477,12 @@ TextureImporter:
       MainLev2.0_1224: 21302448
       MainLev2.0_1089: 21302178
       MainLev2.0_1795: 21303590
-      MainLev2.0_232: 21300464
-      MainLev2.0_1726: 21303452
-      MainLev2.0_1237: 21302474
       MainLev2.0_613: 21301226
-      MainLev2.0_122: 21300244
+      MainLev2.0_232: 21300464
+      MainLev2.0_1237: 21302474
       MainLev2.0_33: 21300066
+      MainLev2.0_122: 21300244
+      MainLev2.0_1726: 21303452
       MainLev2.0_400: 21300800
       MainLev2.0_1417: 21302834
       MainLev2.0_1425: 21302850

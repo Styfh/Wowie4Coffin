@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 7903958345345917706}
-  health: 6
+  health: 4
 --- !u!114 &4270243493777178604
 MonoBehaviour:
   m_ObjectHideFlags: 0

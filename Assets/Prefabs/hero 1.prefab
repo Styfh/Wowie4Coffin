@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1111069169219759969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.158891, y: -2.789901, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7213, y: 0.7213, z: 0.7213}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 792664716659184524}
@@ -146,7 +146,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 3875136816277164487, guid: 3074ff991cb51a341b2ce4e6b2f0b388,
     type: 3}
   arrowForce: 20
-  cooldown: 1.5
+  cooldown: 5
 --- !u!95 &7289959902819706671
 Animator:
   serializedVersion: 4
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005768299, y: -0.3650136}
+  m_Offset: {x: 0.008355856, y: -0.4322889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.712976, y: 1.2699728}
+  m_Size: {x: 0.40765047, y: 1.0526228}
   m_EdgeRadius: 0
 --- !u!114 &1111069169013295430
 MonoBehaviour:

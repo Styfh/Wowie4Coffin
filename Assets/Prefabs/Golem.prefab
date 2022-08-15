@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 7420902704829441473}
-  health: 12
+  health: 8
 --- !u!61 &7051879590908763460
 BoxCollider2D:
   m_ObjectHideFlags: 0

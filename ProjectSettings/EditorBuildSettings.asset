@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameMenu.unity
     guid: d87051e29376a4f49ba5d0cc061e9ae6
   - enabled: 1
-    path: Assets/Scenes/Aggro and camera test.unity
-    guid: 0f6f6842320abdd43af2f9993e78bed1
+    path: Assets/map1 (1).unity
+    guid: 3757ec887f0a4d34ba69ac51c3be231d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6a800f7d360a2694798ea5097f15691d
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 44e5440ed2471b646a94e7e2d5340233
   m_configObjects: {}

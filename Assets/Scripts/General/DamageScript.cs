@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageScript : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class DamageScript : MonoBehaviour
     void Death()
     {
         Destroy(gameObject);
+
+        if(gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public bool isDead()
