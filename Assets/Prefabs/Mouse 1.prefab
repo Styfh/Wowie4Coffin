@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3478091863434933230}
   - component: {fileID: 4005011108345668917}
   - component: {fileID: 8221158093571702145}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Mouse 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,12 +8,15 @@ public class MouseAttack : MonoBehaviour
     [SerializeField] private GameObject cheese;
     [SerializeField] private float travelTime;
 
-    private GameObject cheeseInstance;
+    private Detect detect;
 
     private void OnEnable()
     {
-        //Debug.Log("Instantiating cheese");
-        Instantiate(cheese, transform.position, Quaternion.identity);
+        detect = GetComponent<Detect>();
+        GameObject cheeseInstance = Instantiate(cheese, transform.position, Quaternion.identity);
+        Cheese cheeseScript = cheeseInstance.GetComponent<Cheese>();
+        cheeseScript.Launch(detect.getAggro());
+
     }
 
 }
