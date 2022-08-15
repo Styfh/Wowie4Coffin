@@ -23,9 +23,11 @@ public class ArrowScript : MonoBehaviour
         DamageScript enemy = hitInfo.GetComponent<DamageScript>();
         if (enemy != null){
             enemy.TakeDamage(damage);
-        }
-        if (enemy.health <= 0){
-            Destroy(gameObject);
+            
+            if (enemy.health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
