@@ -8,7 +8,7 @@ public class CheeseFactory : MonoBehaviour
     public GameObject GetCheese(GameObject cheeseTemplate, Vector2 position, Quaternion rotation, GameObject target)
     {
         GameObject cheese = Instantiate(cheeseTemplate, position, rotation);
-        cheese.GetComponent<Cheese>().target = target.transform;
+        cheese.GetComponent<AutoProjectile>().target = target.transform;
         return cheese;
     }
 

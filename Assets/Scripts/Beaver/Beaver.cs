@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,24 +9,29 @@ public class Beaver : MonoBehaviour
 {
 
     [SerializeField] private float cooldownDuration;
+    [SerializeField] private GameObject projectile;
 
     private FollowPlayer fp;
     private FieldOfVision fov;
     private GameObject target;
     private GameObject player;
+    private Animator anim;
 
-    private bool isAttacking;
-    private bool onCooldown;
+    private bool isMoving;
+    private bool onCooldown = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         fov = GetComponent<FieldOfVision>();
         fp = GetComponent<FollowPlayer>();
+        isMoving = false;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        isMoving = false;
 
         Collider2D[] detects = fov.getDetects();
         GameObject aggro = fov.getAggro();
@@ -42,8 +48,6 @@ public class Beaver : MonoBehaviour
             target = player;
         }
 
-        Debug.Log(target);
-
         if(target == null)
         {
             Debug.Log("No target");
@@ -55,36 +59,56 @@ public class Beaver : MonoBehaviour
             fp.setTarget(target.transform);
         }
 
-        if(target == player && !fp.CheckAtDistance())
+        Debug.Log(target);
+
+        if(target == player)
         {
-            fp.MoveTowardsTarget();
+
+            if (!fp.CheckAtDistance())
+            {
+                isMoving = true;
+                fp.MoveTowardsTarget();
+            }
+
         }
         else
         {
             float distanceToRange = fp.getDistanceToTarget() - fp.getStopDistance();
 
-            if (distanceToRange >= .5f && !isAttacking)
+            if (distanceToRange >= .5f)
             {
+                isMoving = true;
                 fp.MoveTowardsTarget();
             }
 
-            else if (distanceToRange <= -.5f && !isAttacking)
+            else if (distanceToRange <= -.5f)
             {
+                isMoving = true;
                 fp.MoveAwayFromTarget();
             }
 
             else if (distanceToRange < .5f && distanceToRange > -.5f)
             {
-                if (onCooldown)
+                if (!onCooldown)
                 {
-                }
-                else if (!isAttacking && !onCooldown)
-                {
+                    Debug.Log("Attacking");
+                    GameObject pebble = Instantiate(projectile, transform.position, Quaternion.identity);
+                    AutoProjectile pebbleScript = pebble.GetComponent<AutoProjectile>();
+                    pebbleScript.Launch(target);
+                    StartCoroutine(Attack());
                 }
             }
         }
 
+        anim.SetBool("moving", isMoving);
 
+    }
 
+    private IEnumerator Attack()
+    {
+        Debug.Log("Cooling down");
+        onCooldown = true;
+        yield return new WaitForSeconds(cooldownDuration);
+        onCooldown = false;
     }
 }
